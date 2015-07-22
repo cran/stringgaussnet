@@ -2,23 +2,14 @@
 \alias{stringgaussnet-package}
 \alias{stringgaussnet}
 \docType{package}
-\title{
-\packageTitle{stringgaussnet}
-}
-\description{
-\packageDescription{stringgaussnet}
-}
-\details{
-
-The DESCRIPTION file:
-\packageDESCRIPTION{stringgaussnet}
-\packageIndices{stringgaussnet}
+\title{stringgaussnet}
+\description{%
 Genome-wide transcriptomic arrays are, from some years, a standard method to identify differentially expressed (DE) genes affected by an observed phenotype. Several statistical analysis methods are now well defined to generate those DE gene lists. The graph theory can be very useful to prioritize key DE genes, and consists in linking genes (nodes) by different interactions (edges). Gene network analyses have already given very interesting results in the literature. There are mainly two kinds of gene networks: semantic networks are based on already known interactions from literature, and gaussian networks are constructed by existing correlations in expression between genes. We propose stringgaussnet, an R package that allows to construct, easily and with much flexibility, those two kinds of networks after DE genes analysis.
 }
-\author{
-\packageAuthor{stringgaussnet}
-
-Maintainer: \packageMaintainer{stringgaussnet}
+\author{\itemize{
+\item Emmanuel Chaplais \email{emmanuel.chaplais@inserm.fr}
+\item Henri-Jean Garchon
+}
 }
 \keyword{ package }
 \examples{
@@ -33,8 +24,7 @@ Maintainer: \packageMaintainer{stringgaussnet}
 ##expression data and DE genes analysis results. This object class is the basis for all functions
 ##in the package.
 
-#StatusFactor<-paste(SpASamples$status,SpASamples$b27,sep=".") # Create a factor based on the
-##status
+#StatusFactor<-SpASamples$status # We create a factor based on the status
 #TimeFactor<-as.character(SpASamples$LPStime) # Create a factor based on LPS stimulation time
 #names(StatusFactor)=names(TimeFactor)=SpASamples$chipnum # Attribute sample names to factors
 
@@ -106,13 +96,13 @@ Maintainer: \packageMaintainer{stringgaussnet}
 ##	list(AddAnnotations=TRUE))
 #StatusFactorSIMoNeNet<-FilterEdges(StatusFactorSIMoNeNet,0.4) # We filter edges on absolute
 ##values of spearman's rho
-#plot(StatusFactorSIMoNeNet[["Patient.B27+"]]$Network) # We plot the network in patients
+#plot(StatusFactorSIMoNeNet$Patient$Network) # We plot the network in patients
 ##dev.off() # We close the used device for plot
-#plot(StatusFactorSIMoNeNet[["Control.B27-"]]$Network) # We plot the network in controls
+#plot(StatusFactorSIMoNeNet$Control$Network) # We plot the network in controls
 ##dev.off() # We close the used device for plot
 ## You can also use directly:
 ## par(mfrow=c(2,1))
-## plot(StatusFactorSIMoNeNet)
+## plot(StatusFactorSIMoNeNet,interactiveMode=F)
 ## If you wish to compare results between different level of factors infered by SIMoNe:
 ##compareFactorNetworks(StatusFactorSIMoNeNet)
 

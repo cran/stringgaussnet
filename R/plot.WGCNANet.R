@@ -19,5 +19,5 @@ function (x, ...)
 	WGCNAGraph$clusters<-as.factor(rep("N",length(Nodes)))
 	WGCNAGraph$name<-paste("Network inferred by WGCNA (alpha=",x$SoftThreshold,", threshold=",x$AThreshold,")",sep="")
 	class(WGCNAGraph)<-"simone.network"
-	plot(WGCNAGraph, ...)
+	if (requireNamespace("simone",quietly=TRUE)) {plot(WGCNAGraph, ...)} else {stop("simone package must be installed to use this function")}
 }

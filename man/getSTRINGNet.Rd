@@ -11,7 +11,7 @@ This function gets PPIs interactions between given genes through the STRING API.
 }
 \usage{
 getSTRINGNet(DEGeneExpr, Identifier = 0, NAdditionalNodes = NA, Species = 9606,
-	ConvertAliases = F, AddAnnotations = T, MartDataset = "hsapiens_gene_ensembl")
+	ConvertAliases = T, AddAnnotations = F, MartDataset = "hsapiens_gene_ensembl")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

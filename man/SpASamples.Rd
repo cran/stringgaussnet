@@ -16,7 +16,6 @@ The example data provided in our package are transcriptomic profiles of MD-DCs f
     \item{\code{chipnum}}{The sample ID}
     \item{\code{status}}{Indicates whether the sample comes from an AS patient (Patient) or control (Control)}
     \item{\code{LPStime}}{LPS stimulation duration before MD-DCs differenciation: no stimulation (H0), 6 hours (H6) or 24 hours (H24)}
-    \item{\code{b27}}{Indicates whether the sample comes from an HLA-B27 positive (B27+) or negative (B27-) individual}
     \item{\code{subject}}{Identifier indicating sample duplicates}
   }
 }

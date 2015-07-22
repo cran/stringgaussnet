@@ -1,5 +1,5 @@
 getSTRINGNet <-
-function (DEGeneExpr,Identifier=0,NAdditionalNodes=NA,Species=9606,ConvertAliases=F,AddAnnotations=T,MartDataset="hsapiens_gene_ensembl")
+function (DEGeneExpr,Identifier=0,NAdditionalNodes=NA,Species=9606,ConvertAliases=T,AddAnnotations=F,MartDataset="hsapiens_gene_ensembl")
 {
 	optionValue<-getOption("stringsAsFactors")
 	options(stringsAsFactors=F)
